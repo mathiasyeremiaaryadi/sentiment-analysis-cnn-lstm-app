@@ -1,0 +1,36 @@
+{% extends 'layouts/sentiment-base.html' %}
+
+{% block content %}
+<div class="container d-flex flex-column min-vh-100">
+    <div class="row justify-content-center">
+        <h3 class="mt-5 text-center">Upload Your Sinovac Tweets Dataset</h3>
+        <div class="col-12 col-md-6 mt-3">
+            <form method="post" action="{{ url_for('render_sinovac_view') }}" enctype="multipart/form-data">
+                {{ form.csrf_token() }}
+
+                <div class="mb-3">
+                    {{ form.dataset_file_field.label(class='form-label') }}
+                    {% if form.dataset_file_field.errors %}
+                    {{ form.dataset_file_field(class='form-control is-invalid dataset-file-input') }}
+                    <div class="form-text text-danger">{{ form.dataset_file_field.errors[0] }}</div>
+                    {% else %}
+                    {{ form.dataset_file_field(class='form-control dataset-file-input') }}
+                    {% endif %}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.model_select_field.label(class='form-label') }}
+                    {{ form.model_select_field(class='form-control') }}
+                </div>
+
+                <div class="d-grid d-md-block process-dataset-button">
+                    <button type="submit" class="btn btn-success float-end px-md-5">
+                        <i class="fa-solid fa-gears"></i>
+                        <span>Process</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

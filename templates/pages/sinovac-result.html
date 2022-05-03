@@ -1,0 +1,109 @@
+{% extends 'layouts/sentiment-base.html' %}
+
+{% block content %}
+<div class="container d-flex flex-column min-vh-100">
+    <div class="row justify-content-center">
+        <h3 class="mt-5 text-center">Sinovac Dataset Sentiment Analysis Summary <br> ({{ selected_model_text }})</h3>
+        <div class="col-12 col-md-4 mt-3">
+            <div class="card text-white text-center bg-primary mb-3 h-100">
+                <div class="card-header h-50">
+                    <h5>Total Tweet Texts</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ sinovac_tweets }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mt-3">
+            <div class="card text-white text-center bg-success mb-3 h-100">
+                <div class="card-header h-50">
+                    <h5>Total Positive Tweets</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ sinovac_positive }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mt-3">
+            <div class="card text-white text-center bg-danger mb-3 h-100">
+                <div class="card-header h-50">
+                    <h5>Total Negative Tweets</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ sinovac_negative }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <h3 class="mt-5 text-center">Prediction Results Examples</h3>
+        <div class="col-12 col-md-12 mt-3">
+            <div class="card mb-3 shadow">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Tweet Texts</th>
+                                <th scope="col">Sentiment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for index, data in sinovac_data.iterrows() %}
+                            <tr>
+                                <th scope="row">{{ index+1 }}</th>
+                                <td>{{ data['text'] }}</td>
+                                <td>
+                                    {% if data['sentiment'] == 'Positive' %}
+                                    <span class="badge bg-success">{{ data['sentiment'] }}</span>
+                                    {% else %}
+                                    <span class="badge bg-danger">{{ data['sentiment'] }}</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3 mb-3">
+        <h3 class="mt-5 text-center">Sentiment Analysis Visualization</h3>
+        <div class="col-12 col-md-6 mt-3">
+            <div class="card text-center mb-3 shadow">
+                <div class="card-body">
+                    <div id="sinovac-bar-plot"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 mt-3">
+            <div class="card text-center mb-3 shadow">
+                <div class="card-body">
+                    <div id="sinovac-pie-plot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+<script>
+    const sinovac_bar_graph = {{ sinovac_bar_plot | safe }};
+    Plotly.newPlot('sinovac-bar-plot', sinovac_bar_graph, {}, { responsive: true });
+
+    const sinovac_pie_graph = {{ sinovac_pie_plot | safe }};
+    Plotly.newPlot('sinovac-pie-plot', sinovac_pie_graph, {}, { responsive: true });
+</script>
+{% endblock %}

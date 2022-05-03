@@ -1,0 +1,52 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<div class="container d-flex flex-column min-vh-100">
+    <div class="row mt-5">
+        <div class="col-12 col-md-6 col-lg-4 text-center mb-4">
+            <div class="card shadow p-3">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <i class="fa-solid fa-brain fa-3x"></i>
+                    </h3>
+                    <h3 class="fw-bold mt-3">AI Powered</h3>
+                    <p class="card-text mt-3">
+                        Sentiment analysis with deep learning models such as hybrid CNN-LSTM model,
+                        single CNN
+                        model, and single LSTM model
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 text-center mb-4">
+            <div class="card shadow p-4">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <i class="fa-solid fa-user-gear fa-3x"></i>
+                    </h3>
+                    <h3 class="fw-bold mt-3">NLP Methods</h3>
+                    <p class="card-text mt-3">
+                        Sentiment analysis processed with several NLP methods such as tweet cleaning, expanding
+                        contractions, removing punctuations, case-folding, negation handling, removing stopwords,
+                        and word lemmatizing
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
+            <div class="card shadow p-4">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <i class="fa-brands fa-twitter fa-3x"></i>
+                    </h3>
+                    <h3 class="fw-bold mt-3">Twitter Data</h3>
+                    <p class="card-text mt-3">
+                        Sentiment analysis with Twitter data about four COVID-19 vaccine types such as Sinovac
+                        tweets, AstraZeneca tweets, Pfizer tweets, and Moderna tweets crawled using Twitter API
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<div class="container d-flex flex-column min-vh-100">
+    <div class="row gy-5 mt-5">
+        <div class="col-12 col-md-6 text-center text-md-start">
+            <h1 class="fw-bold">Natural Language Processing</h1>
+            <p class="fs-4 px-3 px-md-0">
+                Refers to the branch of computer science—and more specifically, the branch of artificial
+                intelligence or AI—concerned with giving computers the ability to understand text and spoken
+                words in much the same way human beings can.
+            </p>
+            
+        </div>
+        <div class="col-12 col-md-6">
+            <img src="{{ url_for('static', filename='img/natural-language-processing.png') }}"
+                class="img-fluid d-none d-md-block" alt="natural-language-processing">
+        </div>
+    </div>
+
+    <div class="row gy-5 mt-md-5">
+        <div class="col-12 col-md-6 justify-content-center d-none d-md-block">
+            <img src="{{ url_for('static', filename='img/sentiment-analysis.jpg') }}" class="img-fluid"
+                alt="sentiment-analysis">
+        </div>
+        <div class="col-12 col-md-6 text-center text-md-start">
+            <h1 class="fw-bold">Sentiment Analysis</h1>
+            <p class="fs-5 px-3 px-md-0 mt-3">
+                Sentiment analysis, also called opinion mining, is the field of study that
+                analyzes people’s opinions, sentiments, evaluations, appraisals, attitudes,
+                and emotions towards entities such as products, services, organizations,
+                individuals, issues, events, topics, and their attributes.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide mt-5 carousel-3" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='img/carousel-3.avif') }}" class="d-block w-100" alt="carousel-3">
+            <div class="carousel-caption text-center d-flex flex-column justify-content-center top-0">
+                <h1 class="fw-bold">Which are types of COVID-19 vaccine topics that used in this
+                    sentiment analysis?</h1>
+                <p class="mt-4">The sentiment analysis topics are about Sinovac vaccine, AstraZeneca
+                    vaccine, Pfizer vaccine, and Moderna vaccine</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row gy-5 mt-5">
+        <div class="col-12 text-center">
+            <h1 class="fw-bold">What is Sinovac Vaccine?</h1>
+            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-5">
+                Sinovac is a vaccine produced by a Chinese biopharmaceutical company, Sinovac BioTech. This vaccine,
+                which has another name, CoronaVac, is a type of whole virus vaccine that uses the inactivated
+                SARS-CoV-2 virus. The inactivated virus is no longer able to infect the body, but it can trigger the
+                formation of immunity in our body.
+            </p>
+        </div>
+        <div class="col-12 text-center">
+            <h1 class="fw-bold">What is AstraZeneca Vaccine?</h1>
+            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-5">
+                The AstraZeneca or Oxford-AstraZeneca vaccine is a vaccine produced by a British biopharmaceutical
+                company and the University of Oxford. This vaccine is a type of viral vector vaccine that utilizes
+                the chimpanzee Adenovirus (which is weakened until it’s harmless), to deliver the spike protein from
+                Covid-19 into our cells and trigger it to build antibodies.
+            </p>
+        </div>
+
+        <div class="col-12 text-center">
+            <h1 class="fw-bold">What is Pifzer Vaccine?</h1>
+            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-5">
+                The Pfizer-BioNTech COVID-19 vaccine also contains a harmless piece of messenger RNA (mRNA). The
+                COVID-19 mRNA teaches cells in the body how to create an immune response to the virus that causes
+                COVID-19. This response helps protect you from getting sick with COVID-19 in the future.
+            </p>
+        </div>
+
+        <div class="col-12 text-center">
+            <h1 class="fw-bold">What is Moderna Vaccine?</h1>
+            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-5">
+                Moderna uses the same mRNA technology as Pfizer-BioNTech and had a similarly high efficacy at preventing symptomatic disease when the companies applied for authorization; it also needs to be stored in freezer-level temperatures. 
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,206 @@
+* {
+  font-family: "Merriweather", serif;
+}
+
+#sidebar a,
+#sidebar a:hover,
+#sidebara:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100vh;
+  z-index: 999;
+  background: #212529;
+  color: #fff;
+  transition: all 0.3s;
+  overflow-y: scroll;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#dismiss {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#dismiss:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #212529;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #212529;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #212529;
+  background: #fff;
+}
+
+#sidebar ul li.active > a {
+  color: #212529;
+  background: #fff;
+}
+
+#sidebar ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #6d7fcc;
+}
+
+#sidebar ul.CTAs {
+  padding: 20px;
+}
+
+#sidebar ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.carousel-caption h1 {
+  font-size: 0.95rem;
+}
+
+.carousel-first .carousel-caption {
+  width: 40%;
+}
+
+.carousel-second .carousel-caption {
+  width: 35%;
+}
+
+.references {
+  margin-top: 150px;
+}
+
+.carousel-3 .carousel-inner img {
+  height: 300px;
+}
+
+.container p {
+  font-size: 0.7rem !important;
+}
+
+.carousel-3 .carousel-caption p {
+  font-size: 0.85rem !important;
+}
+
+.footer img {
+  width: 70%;
+  margin-top: 3.5rem;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .carousel-inner img {
+    height: 650px;
+  }
+
+  .carousel-3 .carousel-inner img {
+    height: 400px;
+  }
+
+  .carousel-3 .carousel-caption {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption h1 {
+    font-size: 3rem;
+  }
+
+  .container p {
+    font-size: 1.4rem !important;
+  }
+
+  .carousel-3 .carousel-caption p {
+    font-size: 1.4rem !important;
+  }
+
+  .footer img {
+    width: 55%;
+  }
+
+  .footer .nxu-logo img {
+    width: 30%;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}

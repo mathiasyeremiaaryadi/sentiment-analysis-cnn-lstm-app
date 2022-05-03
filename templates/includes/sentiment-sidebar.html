@@ -1,0 +1,37 @@
+<nav id="sidebar">
+    <div id="dismiss">
+        <i class="fas fa-arrow-left"></i>
+    </div>
+
+    <div class="sidebar-header">
+        <h3>SentiVacc19</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li class="{{ 'active' if request.path == '/sentiment-analysis' else '' }}">
+            <a href="{{ url_for('render_sentiment_analysis_view') }}">Welcome</a>
+        </li>
+        <li
+            class="{{ 'active' if request.path == '/sentiment-analysis/sinovac' or request.path == '/sentiment-analysis/sinovac/result' else '' }}">
+            <a href="{{ url_for('render_sinovac_view') }}">Sinovac</a>
+        </li>
+        <li
+            class="{{ 'active' if request.path == '/sentiment-analysis/astrazeneca' or request.path == '/sentiment-analysis/astrazeneca/result' else '' }}">
+            <a href="{{ url_for('render_astrazeneca_view') }}">AstraZeneca</a>
+        </li>
+        <li
+            class="{{ 'active' if request.path == '/sentiment-analysis/pfizer' or request.path == '/sentiment-analysis/pfizer/result' else '' }}">
+            <a href="{{ url_for('render_pfizer_view') }}">Pfizer</a>
+        </li>
+        <li
+            class="{{ 'active' if request.path == '/sentiment-analysis/moderna' or request.path == '/sentiment-analysis/moderna/result' else '' }}">
+            <a href="{{ url_for('render_moderna_view') }}">Moderna</a>
+        </li>
+        <li class="mt-4">
+            <a href="/" data-bs-toggle="modal" data-bs-target="#confirmBack">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </li>
+    </ul>
+</nav>

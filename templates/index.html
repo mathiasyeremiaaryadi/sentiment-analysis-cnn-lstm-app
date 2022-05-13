@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-<div class="container d-flex flex-column min-vh-100">
+<div class="container mb-5">
     <div class="row gy-5 mt-5">
         <div class="col-12 col-md-6 text-center text-md-start">
             <h1 class="fw-bold">Natural Language Processing</h1>
@@ -23,7 +23,7 @@
             <img src="{{ url_for('static', filename='img/sentiment-analysis.jpg') }}" class="img-fluid"
                 alt="sentiment-analysis">
         </div>
-        <div class="col-12 col-md-6 text-center text-md-start">
+        <div class="col-12 col-md-6 text-center text-md-end">
             <h1 class="fw-bold">Sentiment Analysis</h1>
             <p class="fs-5 px-3 px-md-0 mt-3">
                 Sentiment analysis, also called opinion mining, is the field of study that
@@ -31,63 +31,66 @@
                 and emotions towards entities such as products, services, organizations,
                 individuals, issues, events, topics, and their attributes.
             </p>
-
         </div>
     </div>
 </div>
 
-<div id="carouselExampleSlidesOnly" class="carousel slide mt-5 carousel-3" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="{{ url_for('static', filename='img/carousel-3.avif') }}" class="d-block w-100" alt="carousel-3">
-            <div class="carousel-caption text-center d-flex flex-column justify-content-center top-0">
-                <h1 class="fw-bold">Which are types of COVID-19 vaccine topics that used in this
-                    sentiment analysis?</h1>
-                <p class="mt-4">The sentiment analysis topics are about Sinovac vaccine, AstraZeneca
-                    vaccine, Pfizer vaccine, and Moderna vaccine</p>
+<div class="container middle-carousel">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="fw-bold">Which are types of COVID-19 vaccine topics <br> that used in this
+                sentiment analysis?</h1>
+            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-3">
+                The sentiment analysis topics are about <br> Sinovac vaccine, AstraZeneca
+                    vaccine, Pfizer vaccine, and Moderna vaccine
+            </p>
+        </div>
+    </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#212529" fill-opacity="1" d="M0,96L26.7,112C53.3,128,107,160,160,181.3C213.3,203,267,213,320,213.3C373.3,213,427,203,480,170.7C533.3,139,587,85,640,101.3C693.3,117,747,203,800,240C853.3,277,907,267,960,261.3C1013.3,256,1067,256,1120,256C1173.3,256,1227,256,1280,229.3C1333.3,203,1387,149,1413,122.7L1440,96L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>
+
+<div class="vaccine-section bg-dark d-flex flex-column min-vh-100 bg-dark text-white pb-5">
+    <div class="container">
+        <div class="row gy-5 mt-5">
+            <div class="col-12 text-center">
+                <h1 class="fw-bold">What is Sinovac Vaccine?</h1>
+                <p class="fs-4 px-3 px-md-5 mt-3 mt-md-5">
+                    Sinovac is a vaccine produced by a Chinese biopharmaceutical company, Sinovac BioTech. This vaccine,
+                    which has another name, CoronaVac, is a type of whole virus vaccine that uses the inactivated
+                    SARS-CoV-2 virus. The inactivated virus is no longer able to infect the body, but it can trigger the
+                    formation of immunity in our body.
+                </p>
+            </div>
+            <div class="col-12 text-center">
+                <h1 class="fw-bold">What is AstraZeneca Vaccine?</h1>
+                <p class="fs-4 px-3 px-md-5 mt-3 mt-md-5">
+                    The AstraZeneca or Oxford-AstraZeneca vaccine is a vaccine produced by a British biopharmaceutical
+                    company and the University of Oxford. This vaccine is a type of viral vector vaccine that utilizes
+                    the chimpanzee Adenovirus (which is weakened until it’s harmless), to deliver the spike protein from
+                    Covid-19 into our cells and trigger it to build antibodies.
+                </p>
+            </div>
+    
+            <div class="col-12 text-center">
+                <h1 class="fw-bold">What is Pifzer Vaccine?</h1>
+                <p class="fs-4 px-3 px-md-5 mt-3 mt-md-5">
+                    The Pfizer-BioNTech COVID-19 vaccine also contains a harmless piece of messenger RNA (mRNA). The
+                    COVID-19 mRNA teaches cells in the body how to create an immune response to the virus that causes
+                    COVID-19. This response helps protect you from getting sick with COVID-19 in the future.
+                </p>
+            </div>
+    
+            <div class="col-12 text-center mb-5">
+                <h1 class="fw-bold">What is Moderna Vaccine?</h1>
+                <p class="fs-4 px-3 px-md-5 mt-3 mt-md-5">
+                    Moderna uses the same mRNA technology as Pfizer-BioNTech and had a similarly high efficacy at preventing symptomatic disease when the companies applied for authorization; it also needs to be stored in freezer-level temperatures. 
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container mb-5">
-    <div class="row gy-5 mt-5">
-        <div class="col-12 text-center">
-            <h1 class="fw-bold">What is Sinovac Vaccine?</h1>
-            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-5">
-                Sinovac is a vaccine produced by a Chinese biopharmaceutical company, Sinovac BioTech. This vaccine,
-                which has another name, CoronaVac, is a type of whole virus vaccine that uses the inactivated
-                SARS-CoV-2 virus. The inactivated virus is no longer able to infect the body, but it can trigger the
-                formation of immunity in our body.
-            </p>
-        </div>
-        <div class="col-12 text-center">
-            <h1 class="fw-bold">What is AstraZeneca Vaccine?</h1>
-            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-5">
-                The AstraZeneca or Oxford-AstraZeneca vaccine is a vaccine produced by a British biopharmaceutical
-                company and the University of Oxford. This vaccine is a type of viral vector vaccine that utilizes
-                the chimpanzee Adenovirus (which is weakened until it’s harmless), to deliver the spike protein from
-                Covid-19 into our cells and trigger it to build antibodies.
-            </p>
-        </div>
-
-        <div class="col-12 text-center">
-            <h1 class="fw-bold">What is Pifzer Vaccine?</h1>
-            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-5">
-                The Pfizer-BioNTech COVID-19 vaccine also contains a harmless piece of messenger RNA (mRNA). The
-                COVID-19 mRNA teaches cells in the body how to create an immune response to the virus that causes
-                COVID-19. This response helps protect you from getting sick with COVID-19 in the future.
-            </p>
-        </div>
-
-        <div class="col-12 text-center">
-            <h1 class="fw-bold">What is Moderna Vaccine?</h1>
-            <p class="fs-4 px-3 px-md-0 mt-3 mt-md-5">
-                Moderna uses the same mRNA technology as Pfizer-BioNTech and had a similarly high efficacy at preventing symptomatic disease when the companies applied for authorization; it also needs to be stored in freezer-level temperatures. 
-            </p>
-        </div>
-    </div>
-</div>
 {% endblock %}
 
 

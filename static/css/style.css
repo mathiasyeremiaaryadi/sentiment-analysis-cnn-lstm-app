@@ -1,5 +1,5 @@
 * {
-  font-family: "Merriweather", serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #sidebar a,
@@ -122,16 +122,20 @@
   font-size: 0.95rem;
 }
 
+.middle-carousel {
+  margin-top: 10rem;
+}
+
+.middle-carousel h1 {
+  font-size: 1.1rem;
+}
+
 .carousel-first .carousel-caption {
   width: 40%;
 }
 
 .carousel-second .carousel-caption {
   width: 35%;
-}
-
-.references {
-  margin-top: 150px;
 }
 
 .carousel-3 .carousel-inner img {
@@ -144,6 +148,26 @@
 
 .carousel-3 .carousel-caption p {
   font-size: 0.85rem !important;
+}
+
+.about-title h1 {
+  margin-top: 5rem;
+}
+
+.about-card .card-body h3 {
+  font-size: 1.5rem !important;
+}
+
+.about-card .card-text {
+  font-size: 1.1rem !important;
+}
+
+.sentiment-result p.card-text  {
+  font-size: 1.3rem !important;
+}
+
+.footer {
+  font-size: 0.9rem;
 }
 
 .footer img {
@@ -173,11 +197,15 @@
   }
 
   .carousel-3 .carousel-caption {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .carousel-caption h1 {
     font-size: 3rem;
+  }
+
+  .middle-carousel .carousel-caption h1 {
+    font-size: 1.8rem;
   }
 
   .container p {
@@ -188,12 +216,20 @@
     font-size: 1.4rem !important;
   }
 
+  .middle-carousel h1 {
+    font-size: 1.9rem;
+  }
+
   .footer img {
     width: 55%;
   }
 
   .footer .nxu-logo img {
     width: 30%;
+  }
+
+  .footer {
+    font-size: 1.2rem;
   }
 }
 

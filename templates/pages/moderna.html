@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container d-flex flex-column min-vh-100">
     <div class="row justify-content-center">
-        <h3 class="mt-5 text-center">Upload Your Moderna Tweets Dataset</h3>
+        <h3 class="mt-5 text-center fw-bold">Upload Your Moderna Tweets Dataset</h3>
         <div class="col-12 col-md-6 mt-3">
             <form method="post" action="{{ url_for('render_moderna_view') }}" enctype="multipart/form-data">
                 {{ form.csrf_token() }}
@@ -23,7 +23,7 @@
                     {{ form.model_select_field(class='form-control') }}
                 </div>
 
-                <div class="d-grid d-md-block process-dataset-button">
+                <div class="d-grid d-md-block process-dataset-button mt-4">
                     <button type="submit" class="btn btn-success float-end px-md-5">
                         <i class="fa-solid fa-gears"></i>
                         <span>Process</span>

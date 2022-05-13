@@ -1,13 +1,13 @@
 {% extends 'layouts/sentiment-base.html' %}
 
 {% block content %}
-<div class="container d-flex flex-column min-vh-100">
+<div class="container d-flex flex-column min-vh-100 sentiment-result">
     <div class="row justify-content-center">
-        <h3 class="mt-5 text-center">AstraZeneca Dataset Sentiment Analysis Summary <br> ({{ selected_model_text }})
+        <h3 class="mt-5 text-center fw-bold">AstraZeneca Dataset Sentiment Analysis Summary <br> ({{ selected_model_text }})
         </h3>
         <div class="col-12 col-md-4 mt-3">
-            <div class="card text-white text-center bg-primary mb-3">
-                <div class="card-header">
+            <div class="card text-white text-center bg-primary mb-3 h-100">
+                <div class="card-header h-50">
                     <h5>Total Tweets</h5>
                 </div>
                 <div class="card-body">
@@ -19,8 +19,8 @@
         </div>
 
         <div class="col-12 col-md-4 mt-3">
-            <div class="card text-white text-center bg-success mb-3">
-                <div class="card-header">
+            <div class="card text-white text-center bg-success mb-3 h-100">
+                <div class="card-header h-50">
                     <h5>Total Positive Tweets</h5>
                 </div>
                 <div class="card-body">
@@ -32,8 +32,8 @@
         </div>
 
         <div class="col-12 col-md-4 mt-3">
-            <div class="card text-white text-center bg-danger mb-3">
-                <div class="card-header">
+            <div class="card text-white text-center bg-danger mb-3 h-100">
+                <div class="card-header h-50">
                     <h5>Total Negative Tweets</h5>
                 </div>
                 <div class="card-body">
@@ -46,10 +46,10 @@
     </div>
 
     <div class="row justify-content-center mt-5">
-        <h3 class="mt-5 text-center">Prediction Results</h3>
+        <h3 class="mt-5 text-center fw-bold">Prediction Results</h3>
         <div class="col-12 col-md-12 mt-3">
             <div class="card mb-3 shadow">
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -80,8 +80,8 @@
         </div>
     </div>
 
-    <div class="row justify-content-center mt-5">
-        <h3 class="mt-5 text-center">Sentiment Analysis Visualization</h3>
+    <div class="row justify-content-center mt-5 mb-5">
+        <h3 class="mt-5 text-center fw-bold">Sentiment Analysis Visualization</h3>
         <div class="col-12 col-md-6 mt-3">
             <div class="card text-center mb-3 shadow">
                 <div class="card-body">
@@ -102,6 +102,11 @@
 
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
 <script>
+    window.onresize = () => {
+        Plotly.Plots.resize('astrazeneca-bar-plot')
+        Plotly.Plots.resize('astrazeneca-pie-plot')
+    }
+    
     const astrazeneca_bar_graph = {{ astrazeneca_bar_plot | safe }};
     Plotly.newPlot('astrazeneca-bar-plot', astrazeneca_bar_graph, {}, { responsive: true });
 

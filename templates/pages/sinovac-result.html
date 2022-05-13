@@ -1,9 +1,9 @@
 {% extends 'layouts/sentiment-base.html' %}
 
 {% block content %}
-<div class="container d-flex flex-column min-vh-100">
+<div class="container d-flex flex-column min-vh-100 sentiment-result">
     <div class="row justify-content-center">
-        <h3 class="mt-5 text-center">Sinovac Dataset Sentiment Analysis Summary <br> ({{ selected_model_text }})</h3>
+        <h3 class="mt-5 text-center fw-bold">Sinovac Dataset Sentiment Analysis Summary <br> ({{ selected_model_text }})</h3>
         <div class="col-12 col-md-4 mt-3">
             <div class="card text-white text-center bg-primary mb-3 h-100">
                 <div class="card-header h-50">
@@ -44,11 +44,11 @@
         </div>
     </div>
 
-    <div class="row justify-content-center mt-3">
-        <h3 class="mt-5 text-center">Prediction Results Examples</h3>
-        <div class="col-12 col-md-12 mt-3">
+    <div class="row justify-content-center mt-5">
+        <h3 class="mt-5 text-center fw-bold">Prediction Results Examples</h3>
+        <div class="col-12 col-md-12 mt-4">
             <div class="card mb-3 shadow">
-                <div class="card-body">
+                <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -78,9 +78,9 @@
         </div>
     </div>
 
-    <div class="row justify-content-center mt-3 mb-3">
-        <h3 class="mt-5 text-center">Sentiment Analysis Visualization</h3>
-        <div class="col-12 col-md-6 mt-3">
+    <div class="row justify-content-center mt-5 mb-5">
+        <h3 class="mt-5 text-center fw-bold">Sentiment Analysis Visualization</h3>
+        <div class="col-12 col-lg-6 mt-3">
             <div class="card text-center mb-3 shadow">
                 <div class="card-body">
                     <div id="sinovac-bar-plot"></div>
@@ -88,7 +88,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-6 mt-3">
+        <div class="col-12 col-lg-6 mt-3">
             <div class="card text-center mb-3 shadow">
                 <div class="card-body">
                     <div id="sinovac-pie-plot"></div>
@@ -100,10 +100,15 @@
 
 <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
 <script>
-    const sinovac_bar_graph = {{ sinovac_bar_plot | safe }};
-    Plotly.newPlot('sinovac-bar-plot', sinovac_bar_graph, {}, { responsive: true });
+    window.onresize = () => {
+        Plotly.Plots.resize('sinovac-bar-plot')
+        Plotly.Plots.resize('sinovac-pie-plot')
+    }
+    
+    const sinovac_bar_graph = {{ sinovac_bar_plot | safe }}
+    Plotly.newPlot('sinovac-bar-plot', sinovac_bar_graph, {}, { responsive: true })
 
-    const sinovac_pie_graph = {{ sinovac_pie_plot | safe }};
-    Plotly.newPlot('sinovac-pie-plot', sinovac_pie_graph, {}, { responsive: true });
+    const sinovac_pie_graph = {{ sinovac_pie_plot | safe }}
+    Plotly.newPlot('sinovac-pie-plot', sinovac_pie_graph, {}, { responsive: true })
 </script>
 {% endblock %}
